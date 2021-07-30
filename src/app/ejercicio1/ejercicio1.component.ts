@@ -24,7 +24,7 @@ export class Ejercicio1Component implements OnInit {
   }
   
   suma(){
-    this.resultado = this.numerador + this.denominador;
+    this.resultado = this.num1 + this.num2;
   }
 
   
