@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'ejercicio1',
@@ -7,14 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ejercicio1Component implements OnInit {
 
-  numerador: number;
-  denominador: number;
+  @Input() num1: number;
+  @Input() num2: number;
+
   resultado: number;
   
 
   constructor() { 
-    this.numerador = 77;
-    this.denominador= 59;
+    this.num1 = 77;
+    this.num2= 59;
     this.resultado= 0;
   }
       
