@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 import { Tarea } from 'src/app/models/tarea.model';
 
 @Component({
@@ -9,9 +9,10 @@ import { Tarea } from 'src/app/models/tarea.model';
 export class ListaComponent implements OnInit {
 
   @Input() tareas: Tarea[];
+  
 
   constructor() { 
-    this.tareas = [];
+   this.tareas = [] 
   }
 
   ngOnInit(): void {

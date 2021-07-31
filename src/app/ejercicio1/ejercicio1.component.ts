@@ -10,6 +10,7 @@ export class Ejercicio1Component implements OnInit {
   @Input() num1: number;
   @Input() num2: number;
 
+
   resultado: number;
   
 
