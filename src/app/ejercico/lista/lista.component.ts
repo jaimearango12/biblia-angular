@@ -18,13 +18,12 @@ export class ListaComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  mostrarTareas(){
-    let resultado = '<ul>';
-    for(let tarea of this.tareas){
-      resultado += `<li>${tarea.titulo} - ${tarea.descripcion}</li>`
-    }
-    resultado += '</ul>';
-    return resultado;
+  onClick(pTarea: Tarea){
+    pTarea.completa = !pTarea.completa
+  }
+
+  onBorrar(indice: any){
+    this.tareas.splice(indice, 1)
   }
 
 

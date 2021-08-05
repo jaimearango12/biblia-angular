@@ -20,7 +20,7 @@ import { ListaComponent } from './ejercico/lista/lista.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

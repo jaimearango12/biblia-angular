@@ -8,7 +8,7 @@ import { Tarea } from 'src/app/models/tarea.model';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  @Output() tareaCreada: EventEmitter<Tarea>
+  @Output() tareaCreada: EventEmitter<Tarea>;
   nuevaTarea: Tarea;
 
   constructor() { 
@@ -21,7 +21,7 @@ export class FormularioComponent implements OnInit {
 
   onClick(){
     this.tareaCreada.emit(this.nuevaTarea);
-    this.nuevaTarea = new Tarea; //esto reinicia el formulario porque lo está emitiendo
+    this.nuevaTarea = new Tarea(); //esto reinicia el formulario porque lo está emitiendo
   }
 
 }
