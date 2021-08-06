@@ -1,3 +1,4 @@
+    <!-- ejercicio To-do
     <div class="container">
         <div class="izquierda">
             <app-formulario (tareaCreada)="onTareaCreada($event)"></app-formulario>
@@ -6,8 +7,21 @@
             <app-lista [tareas]="arrTarea"></app-lista>
         </div>
     </div>
+    -->
         
 
+    <h1>Caja Registradora</h1>
+    <div class="container">
+        <div class="izquierda">
+            <app-lista-productos titulo= "Comida" [productos]="arrComida"
+            (productoSeleccionado)=" onProductoSeleecionado($event)"></app-lista-productos>
+            <app-lista-productos titulo="Bebida" [productos]="arrBebida" 
+            (productoSeleccionado)=" onProductoSeleecionado($event)"></app-lista-productos>
+        </div>
+        <div class="derecha">
+            <app-comanda [arrProductos]="productoSeleccionados"></app-comanda>
+        </div>
+    </div>
     
     
 

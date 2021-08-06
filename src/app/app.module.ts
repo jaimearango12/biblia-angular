@@ -8,6 +8,8 @@ import { Ejercico2CronometComponent } from './ejercico2-cronomet/ejercico2-crono
 import { Ejercico3CalculadComponent } from './ejercico3-calculad/ejercico3-calculad.component';
 import { FormularioComponent } from './ejercico/formulario/formulario.component';
 import { ListaComponent } from './ejercico/lista/lista.component';
+import { ListaProductosComponent } from './ejercicoCaja/lista-productos/lista-productos.component';
+import { ComandaComponent } from './ejercicoCaja/comanda/comanda.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ListaComponent } from './ejercico/lista/lista.component';
     Ejercico2CronometComponent,
     Ejercico3CalculadComponent,
     FormularioComponent,
-    ListaComponent
+    ListaComponent,
+    ListaProductosComponent,
+    ComandaComponent
   ],
   imports: [
     BrowserModule,
