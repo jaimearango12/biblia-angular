@@ -12,6 +12,7 @@ import { ListaProductosComponent } from './ejercicoCaja/lista-productos/lista-pr
 import { ComandaComponent } from './ejercicoCaja/comanda/comanda.component';
 import { ListaproductosComponent } from './ejercicioLista/listaproductos/listaproductos.component';
 import { Formulario2Component } from './ejercicioLista/formulario/formulario.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { Formulario2Component } from './ejercicioLista/formulario/formulario.com
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule
   ],
   providers: [],
