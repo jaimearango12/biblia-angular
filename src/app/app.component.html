@@ -9,7 +9,7 @@
     </div>
     -->
         
-
+    <!-- Caja registradora
     <h1>Caja Registradora</h1>
     <div class="container">
         <div class="izquierda">
@@ -22,6 +22,22 @@
             <app-comanda [arrProductos]="productoSeleccionados"></app-comanda>
         </div>
     </div>
+    -->
     
-    
-
+<div class="container">
+    <div class="row">
+        <app-formulario2 (productoCreado)="onProductoCreado($event)"></app-formulario2>
+    </div>
+    <div class="row listas">
+        <div class="izquierda">
+            <app-listaproductos [productoss]="prodSeleccionados"
+             (producta)="onProducrosSeleccionado($event)"
+             textoBoton="COMPRAR"></app-listaproductos>
+        </div>
+        <div class="derecha">
+            <app-listaproductos [productoss]="prodComprados" 
+            (producta)="onPodNoSelec($event)"
+            textoBoton="QUITAR"></app-listaproductos>
+        </div>       
+    </div>
+</div>

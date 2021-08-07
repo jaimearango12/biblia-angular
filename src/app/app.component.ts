@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Productoz } from './models/lista.model';
 import { Producto } from './models/producto.model';
 import { Tarea } from './models/tarea.model';
 
@@ -14,7 +15,8 @@ export class AppComponent {
   arrBebida: Producto[];
 
   productoSeleccionados: Producto[];
-
+  prodSeleccionados: Productoz[];
+  prodComprados: Productoz[];
 
   constructor(){
     // To-Do
@@ -29,7 +31,6 @@ export class AppComponent {
       new Producto('Pasta', 'https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2020/09/09/5f58b1bb6d322.r_d.627-418-0.jpeg' , 6.90),
       new Producto('Hamburguesa', 'https://www.hola.com/imagenes/cocina/noticiaslibros/20210528190401/dia-internacional-hamburguesa-recetas-2021/0-957-454/dia-hamburguesa-m.jpg' , 5.75),
     ];
-
     this.arrBebida = [
       new Producto('Coca Cola', 'https://coca-colafemsa.com/wp-content/uploads/2020/02/8-5.png' , 1.75),
       new Producto('Fanta', 'https://coca-colafemsa.com/wp-content/uploads/2020/02/5-5.png' , 1.60),
@@ -38,6 +39,8 @@ export class AppComponent {
 
     ];
     this.productoSeleccionados= [];
+    this.prodSeleccionados = [];
+    this.prodComprados = []
   }
   
   //To-Do
@@ -58,6 +61,19 @@ export class AppComponent {
       this.productoSeleccionados.push($event);
     }
   }
-
+  
+  //Lista Productos
+  onProductoCreado($event:any){
+      this.prodSeleccionados.push($event);
+  }
+  onProducrosSeleccionado($event:any){
+    const prodo =this.prodSeleccionados.splice($event, 1)
+    this.prodComprados.push(prodo[0]);
+  
+  }
+  onPodNoSelec($event:any){
+    const prodo =this.prodComprados.splice($event, 1)
+    this.prodSeleccionados.push(prodo[0]);
+  }
  
 }
