@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { Ejercicio1Component } from './ejercicio1/ejercicio1.component';
@@ -13,6 +13,10 @@ import { ComandaComponent } from './ejercicoCaja/comanda/comanda.component';
 import { ListaproductosComponent } from './ejercicioLista/listaproductos/listaproductos.component';
 import { Formulario2Component } from './ejercicioLista/formulario/formulario.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ListaEscritoresComponent } from './ejercicioEcritores/lista-escritores/lista-escritores.component';
+import { DetalleComponent } from './ejercicioEcritores/detalle/detalle.component';
+import { FormiComponent } from './ejercicioForm/formi/formi.component';
+import { ListaEmpleadosComponent } from './ejercicioForm/lista-empleados/lista-empleados.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +29,17 @@ import { AppRoutingModule } from './app-routing.module';
     ListaProductosComponent,
     ComandaComponent,
     ListaproductosComponent,
-    Formulario2Component
+    Formulario2Component,
+    ListaEscritoresComponent,
+    DetalleComponent,
+    FormiComponent,
+    ListaEmpleadosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

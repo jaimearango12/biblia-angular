@@ -75,5 +75,9 @@ export class AppComponent {
     const prodo =this.prodComprados.splice($event, 1)
     this.prodSeleccionados.push(prodo[0]);
   }
+
+  //Lista Escritores
+
+  //lista Empleados
  
 }

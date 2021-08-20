@@ -23,7 +23,8 @@
         </div>
     </div>
     -->
-    
+ 
+    <!--Lista de compra
 <div class="container">
     <div class="row">
         <app-formulario2 (productoCreado)="onProductoCreado($event)"></app-formulario2>
@@ -40,4 +41,13 @@
             textoBoton="QUITAR"></app-listaproductos>
         </div>       
     </div>
+</div>
+-->
+
+<div class="container">
+    <div class="menu">
+        <button class="btn btn-primary m r-2" [routerLink]="['/new']">Formulario</button>
+        <button class="btn btn-primary" [routerLink]="['/list']" >Lista Empleados</button>
+    </div>
+    <router-outlet></router-outlet>
 </div>
