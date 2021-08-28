@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Productoz } from './models/lista.model';
 import { Producto } from './models/producto.model';
 import { Tarea } from './models/tarea.model';
+import { PaisesService } from './services/paises.service';
+import { PersonajesService } from './services/personajes.service';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +15,19 @@ export class AppComponent {
   arrTarea: Tarea[];
   arrComida: Producto[];
   arrBebida: Producto[];
+  paises:any[];
+  arrPersonajes: any[];
 
   productoSeleccionados: Producto[];
   prodSeleccionados: Productoz[];
   prodComprados: Productoz[];
+  currentPage: number;
+  numPages:number;
 
-  constructor(){
+  constructor(
+    private paisesService: PaisesService,
+    private personajesService: PersonajesService
+  ){
     // To-Do
     this.arrTarea = [];
     // Caja Registradora
@@ -41,6 +50,12 @@ export class AppComponent {
     this.productoSeleccionados= [];
     this.prodSeleccionados = [];
     this.prodComprados = []
+    //paises
+    this.paises =[];
+    //personajes rick y morty
+    this.arrPersonajes= [];
+    this.currentPage= 1;
+    this.numPages=1;
   }
   
   //To-Do
@@ -79,5 +94,26 @@ export class AppComponent {
   //Lista Escritores
 
   //lista Empleados
+
+  //Paises
+  /*ejemplo paises ->async*/ ngOnInit(){
+      /*ejemplo paises
+      this.paises= await this.paisesService.getPaises();*/
+      this.personajesService.getAll()
+      .then(response=>{
+        this.arrPersonajes = response['results'];
+        this.numPages = response['info']['pages'];
+      })
+  }
+
+  async changePage(siguiente:boolean){
+      if(siguiente){
+        this.currentPage++;
+      }else{
+        this.currentPage--;
+      }
+       const response = await this.personajesService.getAll(this.currentPage); //esto se hace para que envie los personajes a la pagina
+       this.arrPersonajes= response['results'];
+  }
  
 }

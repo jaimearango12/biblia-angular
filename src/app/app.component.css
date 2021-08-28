@@ -34,7 +34,7 @@ h1{
     width: 30%;
     padding: 10px;
 }*/
-
+/*listas
 .container{
     width: 60%;
     margin: 20px auto 0 auto;
@@ -54,4 +54,44 @@ h1{
 .row.listas div {
     width: 50%;
 }
+*/
+/*paises
 
+    .paises{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pais{
+        width: 100px;
+        border: 1px solid black;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .pais img{
+        width: 100%;
+    }
+*/
+
+.personaje{
+    border: 3px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+.personaje img{
+    width: 100%;
+}
+
+.vivo{
+    border-color: lightgreen;
+}
+.muerto{
+    border-color: tomato;
+}
+.button{
+    margin-left: 10px;
+    padding-left: 10px;
+}

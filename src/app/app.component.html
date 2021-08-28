@@ -44,10 +44,43 @@
 </div>
 -->
 
-<div class="container">
-    <div class="menu">
-        <button class="btn btn-primary m r-2" [routerLink]="['/new']">Formulario</button>
-        <button class="btn btn-primary" [routerLink]="['/list']" >Lista Empleados</button>
+    <!--Lista empleados
+    <div class="container">
+        <div class="menu">
+            <button class="btn btn-primary m r-2" [routerLink]="['/new']">Formulario</button>
+            <button class="btn btn-primary" [routerLink]="['/list']" >Lista Empleados</button>
+        </div>
+        <router-outlet></router-outlet>
     </div>
-    <router-outlet></router-outlet>
-</div>
+    -->
+
+    <!--Paises
+    <div class="paises">
+        <div class="pais" *ngFor="let pais of paises">
+            <img [src]="pais.flag">
+            <h4>{{pais.translations['es'] }}</h4>
+            <p>Capital {{pais.capital}}</p>
+        </div>
+    </div>
+    -->
+
+    <div class="contenedor">
+        <h1>Lista de personajes</h1>
+        <h3>
+            Páginas: {{numPages}}
+        </h3>
+        <div class="botones">
+            <button class="btn btn-primary" (click)="changePage(false)">Anterior</button>
+            <button class="btn btn-primary" (click)="changePage(true)">Siguiente</button>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3"*ngFor="let personaje of arrPersonajes">
+                <div class="personaje" [ngClass]="{vivo:(personaje.status=== 'Alive'),
+                muerto:(personaje.status==='Dead')}">
+                    <h3>{{personaje.name}}</h3>
+                    <img [src]="personaje.image">
+                    <p>{{personaje.species}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
